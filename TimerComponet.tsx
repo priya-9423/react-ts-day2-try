@@ -7,19 +7,25 @@ constructor(props)
 {
   super(props);
   this.state = {
-    Timer : new Date().toString()
+    Timer : new Date()
   }
 }
 
 componentDidMount()
 {
+  this.functionhandler = this.UpdateTimer()
   setInterval(() => this.UpdateTimer(), 1000)
+}
+
+componentWillUnmount()
+{
+  clearInterval(this.UpdateTimer());
 }
 
 UpdateTimer()
 {
   this.setState({
-    Timer: new Date().toString()
+    Timer: new Date()
   })
 }
 
