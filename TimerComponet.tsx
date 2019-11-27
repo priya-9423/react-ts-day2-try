@@ -9,11 +9,11 @@ constructor(props)
   this.state = {
     Timer : new Date()
   }
+  this.UpdateTimer = this.UpdateTimer.bind(this);
 }
 
 componentDidMount()
 {
-  this.functionhandler = this.UpdateTimer()
   setInterval(() => this.UpdateTimer(), 1000)
 }
 
